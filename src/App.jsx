@@ -1,7 +1,15 @@
 import './App.css';
+import { useSpring, animated } from 'react-spring';
 
 function App() {
+  const fadeIn = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    config: { duration: 1000 }, // Adjust duration as needed
+  });
   return (
+    <animated.div style={fadeIn} className="App">
+
     <div className="App">
       <header className="App-header">
         <h1>Ibrahim Usmani</h1>
@@ -112,6 +120,7 @@ function App() {
     </section>
 
     </div>
+    </animated.div>
     );
 }
 
